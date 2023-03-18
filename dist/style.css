@@ -1,0 +1,110 @@
+body {
+    background-color: #f0ede6;
+    font-family: Arial, sans-serif;
+}
+
+#cityName {
+    font-weight: bold;
+    font-size: xx-large;
+    height: 50px;
+    color: #3d3f40;
+    text-align: center;
+    margin-top: 30px;
+    text-shadow: 1px 1px #fff;
+}
+
+
+#citiesWeather-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.cityWeather {
+    background-color: #d1c9bb;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-areas:
+        "icon name name temp celsius"
+        "icon condition condition temp celsius"
+        "buttons buttons buttons buttons buttons";
+    align-items: center;
+    box-shadow: 3px 3px 5px #b3b3b3;
+}
+
+.cityWeather>img {
+    grid-area: icon;
+    justify-self: center;
+}
+
+.degree-celsius {
+    grid-area: celsius;
+    font-size: xx-large;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px #3d3f40;
+}
+
+.name {
+    grid-area: name;
+    font-size: xx-large;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px #3d3f40;
+}
+
+.temperature {
+    grid-area: temp;
+    font-size: xx-large;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px #3d3f40;
+}
+
+.date {
+    grid-area: date;
+    font-size: large;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px #3d3f40;
+}
+
+.condition {
+    grid-area: condition;
+    font-size: large;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px #3d3f40;
+}
+
+.buttons {
+    grid-area: buttons;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.saveCity,
+.deleteCity {
+    cursor: pointer;
+    font-size: large;
+    color: #fff;
+    background-color: #b7a8a2;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-shadow: 1px 1px #3d3f40;
+    box-shadow: 3px 3px 5px #b3b3b3;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.saveCity:hover,
+.deleteCity:hover {
+    background-color: #c6b2aa;
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 10px #b3b3b3;
+}

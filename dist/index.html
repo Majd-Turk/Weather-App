@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Weather app </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+
+<body>
+  <div id="cityName">
+    <input type="text" id="cityName-input" placeholder="Enter city name" />
+    <button class="buttonCityName" type="button">Search!</button>
+  </div>
+
+  <div id="myCityWeather-container"></div>
+
+  <div id="citiesWeather-container"></div>
+
+  <script id="citiesWeather-template" type="text/x-handlebars-template">
+        {{#each this}}
+            <div class="cityWeather">
+                <a class="name"> {{name}} </a>
+                <img data-icon={{conditionPic}} src="https://openweathermap.org/img/wn/{{conditionPic}}@2x.png"alt="img" />
+                <div class="condition"> {{condition}}  </div>
+                <div class="temperature"> {{temperature}} </div>  
+                <div class="degree-celsius"> &#8451</div>  
+                <button class="deleteCity"type="button">delete</button>
+                <button class="saveCity"type="button">Save</button>    
+            </div>
+        {{/each}}
+    </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <script src="model.js"></script>
+  <script src="view.js"></script>
+  <script src="controller.js"></script>
+</body>
+
+</html>
